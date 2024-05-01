@@ -2,8 +2,6 @@ document.getElementById("startShoppingButton").addEventListener("click", startSh
 
 let totalPrice = 0
 
-// startShoppingButton() /* */
-
 async function fullscreen() {
     await sleep(1000);
     document.documentElement.requestFullscreen();
@@ -25,7 +23,6 @@ async function startShoppingButton() {
     await sleep(250)
     document.querySelector(".loginScreenContent").classList.remove("hideContent")
     await sleep(500)
-    // await loginAsGuestButton() /* */
 }
 
 const loginOrGuestHTML = `
@@ -112,5 +109,11 @@ const itemDatabase = [
         "name": "SanDisk 32GB MicroSD Card",
         "price": 15.99,
         "discount": 2
+    },
+    {
+        "code": "X003I9SAVH",
+        "name": "3D Printer Filament",
+        "price": 29.99,
+        "discount": 10
     }
 ]
