@@ -52,6 +52,8 @@ async function loginAsGuestButton() {
     await sleep(250)
     document.querySelector(".totalWrapper").classList.remove("hideContent")
     document.querySelector(".mainShoppingScreenContainer").classList.remove("hideContent")
+    await sleep(250)
+    document.getElementById("codeInput").focus();
 }
 
 const shoppingScreenMainHTML  = `
