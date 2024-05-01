@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+        <title>EzShopper</title>
+    </head>
+    <body>
+        <div class="main mainStartScreen">
+            <div class="leftSideLayer">
+                <div class="backgroundImage"></div>
+                <div class="overlayContainer">
+                    <div class="overlaySpacingGrid">
+                        <div></div>
+                        <div class="logoContent">
+                            <h1 class="projectNameText">EzShopper</h1>
+                            <h5 class="projectNameBetaText">BETA</h5>
+                        </div>
+                        <div class="totalWrapper hideContent">
+                            <input type="text" class="codeInput" id="codeInput" autofocus/>
+                            <div class="totalContainer">
+                                <h4>Total:</h4>
+                                <h4 class="totalAmount">$0.00</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSideContent">
+                <div class="startScreenContent">
+                    <button class="largeButton emphasisButton" id="startShoppingButton">Start shopping</button>
+                    <div class="textWithLines">
+                        <div></div>
+                        <h6>OR</h6>
+                        <div></div>
+                    </div>
+                    <button class="largeButton emphasisButton cautionButton">Report an issue</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <p class="versionDisplay"><span class="demoUseOnly">FOR DEMO USE ONLY</span> - BETA - v0.3.2</p>
+    <script src="ezshopper.js"></script>
+    <style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</html>
