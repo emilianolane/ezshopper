@@ -4,7 +4,15 @@ let totalPrice = 0
 
 // startShoppingButton() /* */
 
+async function fullscreen() {
+    await sleep(1000);
+    document.documentElement.requestFullscreen();
+}
+
+fullscreen()
+
 async function startShoppingButton() {
+    fullscreen()
     document.querySelector(".startScreenContent").classList.add("hideContent")
     await sleep(500)
     document.querySelector(".main").classList.remove("mainStartScreen")
