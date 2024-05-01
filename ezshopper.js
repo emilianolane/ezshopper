@@ -107,6 +107,12 @@ const itemDatabase = [
         "discount": 1.99
     },
     {
+        "code": "1701258",
+        "name": "Burke",
+        "price": 2.99,
+        "discount": 5
+    },
+    {
         "code": "619659184162",
         "name": "SanDisk 32GB MicroSD Card",
         "price": 15.99,
