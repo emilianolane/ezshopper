@@ -1,8 +1,8 @@
 document.getElementById("startShoppingButton").addEventListener("click", startShoppingButton)
 
-let listOfItems = []
+let totalPrice = 0
 
-startShoppingButton() /* */
+// startShoppingButton() /* */
 
 async function startShoppingButton() {
     document.querySelector(".startScreenContent").classList.add("hideContent")
@@ -17,7 +17,7 @@ async function startShoppingButton() {
     await sleep(250)
     document.querySelector(".loginScreenContent").classList.remove("hideContent")
     await sleep(500)
-    await loginAsGuestButton() 
+    // await loginAsGuestButton() /* */
 }
 
 const loginOrGuestHTML = `
@@ -51,21 +51,7 @@ async function loginAsGuestButton() {
 
 const shoppingScreenMainHTML  = `
     <div class="mainShoppingScreenContainer hideContent">
-        <div class="listOfItems">
-            <div>
-                <h5>1LB Organic Oats</h5>
-                <div class="itemCostContainer">
-                    <h5>$3.99</h5>
-                </div>
-            </div>
-            <div>
-                <h5>Raspberry Pi 4 8GB RAM with SD Card</h5>
-                <div class="itemCostContainer">
-                    <p class="discountedItem">-$10.00</p>
-                    <h5>$79.99</h5>
-                </div>
-            </div>
-        </div>
+        <div class="listOfItems" id="listOfItems"></div>
     </div>
 `
 
@@ -73,7 +59,32 @@ document.getElementById("codeInput").addEventListener("keypress", addEntry);
 
 function addEntry(e) {
     if (e.code == "Enter") {
-        console.log(document.getElementById("codeInput").value)
+        console.log(codeInput.value)
+        let codeFound = false
+        for (let i in itemDatabase) {
+            if (codeInput.value == itemDatabase[i].code) {
+                codeFound = true
+                let discountHTML = ``
+                if (itemDatabase[i].discount != 0) {
+                    discountHTML = `<p class="discountedItem">-$${itemDatabase[i].discount.toFixed(2)}</p>`
+                }
+                document.getElementById("listOfItems").insertAdjacentHTML("beforeend", `
+                    <div>
+                        <h5>${itemDatabase[i].name}</h5>
+                        <div class="itemCostContainer">
+                            ${discountHTML}
+                            <h5>$${(itemDatabase[i].price-itemDatabase[i].discount).toFixed(2)}</h5>
+                        </div>
+                    </div>
+                `)
+                totalPrice += itemDatabase[i].price-itemDatabase[i].discount
+                document.getElementById("total").innerText = `$${totalPrice.toFixed(2)}`
+            }
+        }
+        if (!codeFound) {
+
+        }
+        codeInput.value = ""
     }
 }
 
@@ -83,15 +94,15 @@ function sleep(ms) {
 
 const itemDatabase = [
     {
-        "code": "382",
-        "name": "1LB Organic Oats",
-        "price": 3.99,
-        "discount": 0
+        "code": "1655081",
+        "name": "Ayrez",
+        "price": 9999999999.99,
+        "discount": 1.99
     },
     {
-        "code": "9823",
-        "name": "Raspberry Pi 4 8GB RAM with SD Card",
-        "price": 89.99,
-        "discount": 10
+        "code": "619659184162",
+        "name": "SanDisk 32GB MicroSD Card",
+        "price": 15.99,
+        "discount": 2
     }
 ]

@@ -257,6 +257,8 @@ input {
     display: grid;
     gap: 4px;
     padding: 16px;
+    overflow-y: scroll;
+    height: calc(100vh - 64px);
 }
 
 .listOfItems > * {
